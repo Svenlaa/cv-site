@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import NavBar from "../components/NavBar";
 
 const Home: NextPage = () => {
   return (
@@ -8,13 +9,14 @@ const Home: NextPage = () => {
         <title>v2.Svenlaa.com</title>
         <meta
           name="description"
-          content="The second generation of Svenlaa.com"
+          content="De tweede generatie van Svenlaa.com"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <NavBar />
       <main>
-        <p>v2.Svenlaa.com</p>
+        <p className="text-prime">v2.Svenlaa.com</p>
       </main>
     </>
   );
