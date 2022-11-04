@@ -1,5 +1,6 @@
 import {
   faFacebook,
+  faGithub,
   faLinkedinIn,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
@@ -10,38 +11,26 @@ import Link from "next/link";
 import CircleButton from "./UI/CircleButton";
 import HoverButton from "./UI/HoverButton";
 
-const links = [
+export const links = [
   {
     label: "home",
     href: "/",
   },
   {
-    label: "features",
-    href: "#features",
+    label: "mijn ervaring",
+    href: "#ervaring",
   },
   {
-    label: "portfolio",
-    href: "#portfolio",
+    label: "educatie",
+    href: "#educatie",
   },
   {
-    label: "resume",
-    href: "#resume",
+    label: "cv",
+    href: "#cv",
   },
   {
-    label: "testimonial",
-    href: "#testimonial",
-  },
-  {
-    label: "clients",
-    href: "#clients",
-  },
-  {
-    label: "pricing",
-    href: "#pricing",
-  },
-  {
-    label: "blog",
-    href: "#blog",
+    label: "projecten",
+    href: "#projecten",
   },
   {
     label: "contact",
@@ -51,19 +40,19 @@ const links = [
 
 const SocialLinks = [
   {
-    label: faFacebook,
-    href: "https://facebook.com",
-    title: "Facebook",
-  },
-  {
-    label: faTwitter,
-    href: "https://twitter.com/Svenlaa",
-    title: "Twitter",
+    label: faGithub,
+    href: "https://github.com/Svenlaa",
+    title: "Github",
   },
   {
     label: faLinkedinIn,
     href: "https://linkedin.com/in/Svenlaa",
     title: "Linkedin",
+  },
+  {
+    label: faTwitter,
+    href: "https://twitter.com/Svenlaa",
+    title: "Twitter",
   },
 ] as const;
 
@@ -100,7 +89,7 @@ const SidebarContent = ({ onClick }: Props) => {
         </ul>
       </nav>
       <div className="mt-5 mb-5 pt-5 text-[14px] font-medium uppercase">
-        <span className="tracking-[2px]">On the internet</span>
+        <span className="tracking-[2px]">Elders op het internet</span>
       </div>
       <ul className="ml-[15px] flex flex-row gap-[15px]">
         {SocialLinks.map((link, i) => (
