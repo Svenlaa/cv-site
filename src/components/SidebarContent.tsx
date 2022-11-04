@@ -1,13 +1,6 @@
-import {
-  faFacebook,
-  faGithub,
-  faLinkedinIn,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import { faX } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
+import { FiGithub, FiLinkedin, FiTwitter, FiX } from "react-icons/fi";
 import CircleButton from "./UI/CircleButton";
 import HoverButton from "./UI/HoverButton";
 
@@ -40,19 +33,19 @@ export const links = [
 
 const SocialLinks = [
   {
-    label: faGithub,
+    label: <FiGithub />,
     href: "https://github.com/Svenlaa",
     title: "Github",
   },
   {
-    label: faLinkedinIn,
-    href: "https://linkedin.com/in/Svenlaa",
-    title: "Linkedin",
-  },
-  {
-    label: faTwitter,
+    label: <FiTwitter />,
     href: "https://twitter.com/Svenlaa",
     title: "Twitter",
+  },
+  {
+    label: <FiLinkedin />,
+    href: "https://linkedin.com/in/Svenlaa",
+    title: "Linkedin",
   },
 ] as const;
 
@@ -71,7 +64,7 @@ const SidebarContent = ({ onClick }: Props) => {
             className="rounded-full"
             alt="Svenlaa"
           />
-          <CircleButton onClick={onClick} icon={faX} />
+          <CircleButton onClick={onClick} icon={<FiX />} />
         </div>
         <p className="mt-[20px] pr-[4%] text-base leading-8">
           Sven Lammertink is een Software developer voor webapplicaties.
@@ -97,7 +90,7 @@ const SidebarContent = ({ onClick }: Props) => {
             <HoverButton
               title={link.title}
               href={link.href}
-              label={<FontAwesomeIcon icon={link.label} />}
+              label={link.label}
             />
           </li>
         ))}

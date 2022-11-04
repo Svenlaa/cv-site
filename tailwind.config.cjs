@@ -21,6 +21,9 @@ module.exports = {
         white: "#ffffff",
         white0: "#e2e8ec",
       },
+      transitionDuration: {
+        400: "400ms",
+      },
     },
   },
   plugins: [],
