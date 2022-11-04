@@ -1,7 +1,14 @@
+import {
+  faFacebook,
+  faLinkedinIn,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import CircleButton from "./UI/CircleButton";
+import HoverButton from "./UI/HoverButton";
 
 const links = [
   {
@@ -42,6 +49,24 @@ const links = [
   },
 ] as const;
 
+const SocialLinks = [
+  {
+    label: faFacebook,
+    href: "https://facebook.com",
+    title: "Facebook",
+  },
+  {
+    label: faTwitter,
+    href: "https://twitter.com/Svenlaa",
+    title: "Twitter",
+  },
+  {
+    label: faLinkedinIn,
+    href: "https://linkedin.com/in/Svenlaa",
+    title: "Linkedin",
+  },
+] as const;
+
 type Props = {
   onClick: () => void;
 };
@@ -74,9 +99,20 @@ const SidebarContent = ({ onClick }: Props) => {
           ))}
         </ul>
       </nav>
-      <div className="mt-5 pt-5 text-[14px] font-medium uppercase">
+      <div className="mt-5 mb-5 pt-5 text-[14px] font-medium uppercase">
         <span className="tracking-[2px]">On the internet</span>
       </div>
+      <ul className="ml-[15px] flex flex-row gap-[15px]">
+        {SocialLinks.map((link, i) => (
+          <li key={i} className="my-[15px]">
+            <HoverButton
+              title={link.title}
+              href={link.href}
+              label={<FontAwesomeIcon icon={link.label} />}
+            />
+          </li>
+        ))}
+      </ul>
     </>
   );
 };
