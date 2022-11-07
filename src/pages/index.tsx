@@ -4,6 +4,9 @@ import NavBar from "../components/NavBar";
 import { FiFile, FiMail, FiMapPin, FiUser } from "react-icons/fi";
 import HoverButton from "../components/UI/HoverButton";
 import Image from "next/image";
+import ExperienceCard, {
+  type ExperienceProps,
+} from "../components/ExerienceCard";
 
 const entries = [
   {
@@ -19,6 +22,16 @@ const entries = [
     label: "Nijverdal, Nederland",
   },
 ] as const;
+
+const workExperience: ExperienceProps["item"][] = [
+  {
+    company: "TradeRealm",
+    endDate: "2022",
+    startDate: "2022",
+    title: "Junior Software Developer",
+    image: "/companies/TradeRealm.jpg",
+  },
+];
 
 const Home: NextPage = () => (
   <>
@@ -86,6 +99,19 @@ const Home: NextPage = () => (
       </div>
       <div className="py-20">
         <span className="mx-auto block border-t border-solid border-text/20"></span>
+      </div>
+      <div className="flex flex-col">
+        <div className="flex flex-col items-center justify-center">
+          <span className="font-nav text-[14px] font-medium uppercase tracking-wider text-prime ">
+            Meer dan 3 jaar aan het werk
+          </span>
+          <h2 className="font-nav text-[34px] font-bold">Werkervaring</h2>
+        </div>
+        <div>
+          {workExperience.map((item, i) => (
+            <ExperienceCard key={i} item={item} />
+          ))}
+        </div>
       </div>
     </main>
   </>
