@@ -84,8 +84,8 @@ const Home: NextPage = () => (
           </div>
         </section>
       </div>
-      <div>
-        <span>Meer dan 1 jaar ervaring</span>
+      <div className="py-20">
+        <span className="mx-auto block border-t border-solid border-text/20"></span>
       </div>
     </main>
   </>
