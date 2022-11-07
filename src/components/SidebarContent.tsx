@@ -88,6 +88,7 @@ const SidebarContent = ({ onClick }: Props) => {
         {SocialLinks.map((link, i) => (
           <li key={i} className="my-[15px]">
             <HoverButton
+              className="h-[53px] w-[53px]"
               title={link.title}
               href={link.href}
               label={link.label}
