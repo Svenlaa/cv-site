@@ -29,16 +29,16 @@ const Home: NextPage = () => (
     </Head>
 
     <NavBar />
-    <main className="container mx-auto flex flex-col gap-[15px] p-[15px]">
-      <div className="flex flex-col gap-[10px] lg:max-h-[80vh] lg:flex-wrap">
-        <div className="group mb-[36px] h-full lg:w-1/2">
+    <main className="mx-auto flex max-w-screen-xl flex-col gap-[15px] p-[15px]">
+      <div className="flex h-fit grid-flow-col flex-col gap-[10px] md:grid md:grid-cols-[2fr,_3fr] md:grid-rows-[2fr,_1fr] md:gap-[20px] md:pt-[75px] md:pb-[62px]">
+        <div className="group h-full" id="home">
           <section className="w-full rounded-[10px] bg-gradient-to-br from-white0 to-white p-[25px] pt-[41px] shadow-white3 duration-400 group-hover:translate-y-[-5px]">
             <div className="mb-[30px]">
               <div className="relative mb-[20px] flex h-[40px] w-[40px] flex-row items-center justify-center rounded-full bg-prime/70 after:absolute after:h-[60px] after:w-[60px] after:rounded-full after:bg-prime/20 ">
                 <FiUser className="trans top-0 left-0 z-10 aspect-square items-center text-[22px] text-white" />
               </div>
               <h2 className="mb-[11px] font-nav text-[32px] font-bold leading-[40px] lg:text-[52px] lg:leading-[62px]">
-                Hey, ik ben <span className="text-prime">Sven</span>
+                Ik ben <span className="text-prime">Sven</span>
               </h2>
               <p className="text-[16px] leading-6">
                 Eén van de beste, snelst lerende, software developers die je
@@ -55,33 +55,37 @@ const Home: NextPage = () => (
             </div>
           </section>
         </div>
-        <section className="my-[10px] h-full rounded-[10px] bg-gradient-to-br from-white0 to-white px-[20px] py-[15px] shadow-white3 lg:w-1/2">
+        <section className="my-[10px] h-min rounded-[10px] bg-gradient-to-br from-white0 to-white px-[20px] py-[15px] shadow-white3">
           <div className="p-[10px]">
             <span className="mb-[20px]">Download mijn CV</span>
             <div className="flex flex-row flex-wrap">
               <HoverButton
                 className="m-[7px] w-fit whitespace-nowrap py-[15px] px-[35px] font-nav !text-[14px] font-medium uppercase !text-prime group-hover:!text-white"
                 label="Download CV"
-                href="./yes"
+                href="./CV_button"
               />
               <HoverButton
                 className="m-[7px] w-fit whitespace-nowrap py-[15px] px-[35px] font-nav !text-[14px] font-medium uppercase !text-prime group-hover:!text-white"
-                label="Neem contact op"
+                label="Contact"
                 href="#contact"
               />
             </div>
           </div>
         </section>
-        <section className="rounded-[10px] bg-gradient-to-br from-white0 to-white p-[15px] shadow-white3 lg:ml-5 lg:w-1/2">
+        <section className="col-start-2 row-span-2 h-min rounded-[10px] bg-gradient-to-br from-white0 to-white p-[15px] shadow-white3">
           <div className="relative z-10 aspect-[1.333] w-full overflow-hidden rounded-md">
             <Image
               src="/NewPic.jpg"
+              priority
               fill
               alt="Sven Lammertink achter een beelscherm"
               className="absolute z-0 transition-all duration-400 ease-in-out hover:scale-110"
             />
           </div>
         </section>
+      </div>
+      <div>
+        <span>Meer dan 1 jaar ervaring</span>
       </div>
     </main>
   </>

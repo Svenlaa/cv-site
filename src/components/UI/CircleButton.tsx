@@ -1,10 +1,10 @@
 import clsx from "clsx";
-import { type ReactNode } from "react";
+import { type MouseEventHandler, type ReactNode } from "react";
 
 type Props = {
-  onClick: JSX.IntrinsicElements["button"]["onClick"];
+  onClick: MouseEventHandler<HTMLButtonElement>;
   icon: ReactNode;
-  className?: JSX.IntrinsicElements["button"]["className"];
+  className?: string;
 };
 const CircleButton = ({ onClick, icon, className }: Props) => {
   return (
