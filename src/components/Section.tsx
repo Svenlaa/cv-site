@@ -6,9 +6,9 @@ type Props = {
   children?: ReactNode;
 };
 const Section = ({ title, tagline, id, children }: Props & HeadlineProps) => (
-  <section className="flex flex-col py-[60px]" id={id}>
+  <section className="py-[60px]" id={id}>
     <Headline tagline={tagline} title={title} />
-    <div>{children}</div>
+    {children}
   </section>
 );
 

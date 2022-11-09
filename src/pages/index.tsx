@@ -131,8 +131,8 @@ const Home: NextPage = () => (
         </section>
       </div>
 
-      {/* Werkervaring */}
       <Line />
+      {/* Werkervaring */}
       <Section
         id="ervaring"
         title="Werkervaring"
@@ -143,12 +143,18 @@ const Home: NextPage = () => (
         ))}
       </Section>
 
-      {/* Opleiding */}
       <Line />
+      {/* Opleiding */}
       <Section id="opleiding" title="Opleiding" tagline="Leer je ook wat">
         {educationExperience.map((item, i) => (
           <ExperienceCard key={i} item={item} />
         ))}
+      </Section>
+
+      <Line />
+      {/* Contact */}
+      <Section id="contact" title="Contact" tagline="Heb je een vraag?">
+        Pizza
       </Section>
     </main>
   </>
