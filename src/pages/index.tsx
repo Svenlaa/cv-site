@@ -4,9 +4,11 @@ import NavBar from "../components/NavBar";
 import { FiFile, FiMail, FiMapPin, FiUser } from "react-icons/fi";
 import HoverButton from "../components/UI/HoverButton";
 import Image from "next/image";
-import { type ExperienceProps } from "../components/ExerienceCard";
+import ExperienceCard, {
+  type ExperienceProps,
+} from "../components/ExerienceCard";
 import Line from "../components/UI/Line";
-import ExperienceSection from "../components/ExperienceSection";
+import Section from "../components/Section";
 
 const entries = [
   {
@@ -129,23 +131,25 @@ const Home: NextPage = () => (
         </section>
       </div>
 
-      <Line />
       {/* Werkervaring */}
-      <ExperienceSection
+      <Line />
+      <Section
         id="ervaring"
         title="Werkervaring"
         tagline="Meer dan 3 jaar aan het werk"
-        items={workExperience}
-      />
+      >
+        {workExperience.map((item, i) => (
+          <ExperienceCard key={i} item={item} />
+        ))}
+      </Section>
 
-      <Line />
       {/* Opleiding */}
-      <ExperienceSection
-        id="opleiding"
-        title="Opleiding"
-        tagline="Doe kennis op"
-        items={educationExperience}
-      />
+      <Line />
+      <Section id="opleiding" title="Opleiding" tagline="Leer je ook wat">
+        {educationExperience.map((item, i) => (
+          <ExperienceCard key={i} item={item} />
+        ))}
+      </Section>
     </main>
   </>
 );
