@@ -1,8 +1,9 @@
-# dev.Svenlaa.com
+# v2.Svenlaa.com
 
 - **Framework**: [Next.js](https://nextjs.org)
 - **Styling**: [Tailwind](https://tailwindcss.org)
 - **Deployment**: [Vercel](https://vercel.com)
+- **Email**: [Nodemailer](https://nodemailer.com)
 
 ## Running Locally
 
