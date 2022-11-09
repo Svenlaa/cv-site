@@ -14,8 +14,8 @@ export const links = [
     href: "#ervaring",
   },
   {
-    label: "educatie",
-    href: "#educatie",
+    label: "opleiding",
+    href: "#opleiding",
   },
   {
     label: "cv",

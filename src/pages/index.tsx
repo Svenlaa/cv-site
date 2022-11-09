@@ -4,9 +4,9 @@ import NavBar from "../components/NavBar";
 import { FiFile, FiMail, FiMapPin, FiUser } from "react-icons/fi";
 import HoverButton from "../components/UI/HoverButton";
 import Image from "next/image";
-import ExperienceCard, {
-  type ExperienceProps,
-} from "../components/ExerienceCard";
+import { type ExperienceProps } from "../components/ExerienceCard";
+import Line from "../components/UI/Line";
+import ExperienceSection from "../components/ExperienceSection";
 
 const entries = [
   {
@@ -25,11 +25,38 @@ const entries = [
 
 const workExperience: ExperienceProps["item"][] = [
   {
-    company: "TradeRealm",
-    endDate: "2022",
     startDate: "2022",
-    title: "Junior Software Developer",
+    endDate: "",
+    company: "TradeRealm",
     image: "/companies/TradeRealm.jpg",
+    imageAlt: "Voorkant van het TradeRealm kantoor",
+    title: "Junior Software Developer",
+    details: "Aan projecten gewerkt met TypeScript en React",
+  },
+  {
+    startDate: "2017",
+    endDate: "2019",
+    company: "Coop Leon Haanstra",
+    image: "/companies/Coop.jpg",
+    title: "Vakkenvuller",
+  },
+];
+
+const educationExperience: ExperienceProps["item"][] = [
+  {
+    company: "EEGA",
+    startDate: "2021",
+    endDate: "",
+    title: "Leer-werktraject",
+    image: "/companies/eega.jpg",
+  },
+  {
+    company: "Reggesteyn",
+    startDate: "2015",
+    endDate: "2020",
+    title: "Havo NG, NT",
+    details: "Profielen 3 & 4, niet afgerond",
+    image: "/companies/Reggesteyn.jpg",
   },
 ];
 
@@ -43,7 +70,11 @@ const Home: NextPage = () => (
 
     <NavBar />
     <main className="mx-auto flex max-w-screen-xl flex-col gap-[15px] p-[15px]">
-      <div className="flex h-fit grid-flow-col flex-col gap-[10px] md:grid md:grid-cols-[2fr,_3fr] md:grid-rows-[2fr,_1fr] md:gap-[20px] md:pt-[75px] md:pb-[62px]">
+      {/* Above the fold */}
+      <div
+        className="flex h-fit grid-flow-col flex-col gap-[10px] pb-[60px] md:grid md:grid-cols-[2fr,_3fr] md:grid-rows-[2fr,_1fr] md:gap-[20px] md:pt-[75px]"
+        id="home"
+      >
         <div className="group h-full" id="home">
           <section className="w-full rounded-[10px] bg-gradient-to-br from-white0 to-white p-[25px] pt-[41px] shadow-white3 duration-400 group-hover:translate-y-[-5px]">
             <div className="mb-[30px]">
@@ -85,7 +116,7 @@ const Home: NextPage = () => (
             </div>
           </div>
         </section>
-        <section className="col-start-2 row-span-2 h-min rounded-[10px] bg-gradient-to-br from-white0 to-white p-[15px] shadow-white3">
+        <section className="col-start-2 row-span-2 h-min rounded-[10px] bg-gradient-to-br from-white0 to-white p-[15px] shadow-white3 md:p-[30px]">
           <div className="relative z-10 aspect-[1.333] w-full overflow-hidden rounded-md">
             <Image
               src="/NewPic.jpg"
@@ -97,22 +128,24 @@ const Home: NextPage = () => (
           </div>
         </section>
       </div>
-      <div className="py-20">
-        <span className="mx-auto block border-t border-solid border-text/20"></span>
-      </div>
-      <div className="flex flex-col">
-        <div className="flex flex-col items-center justify-center">
-          <span className="font-nav text-[14px] font-medium uppercase tracking-wider text-prime ">
-            Meer dan 3 jaar aan het werk
-          </span>
-          <h2 className="font-nav text-[34px] font-bold">Werkervaring</h2>
-        </div>
-        <div>
-          {workExperience.map((item, i) => (
-            <ExperienceCard key={i} item={item} />
-          ))}
-        </div>
-      </div>
+
+      <Line />
+      {/* Werkervaring */}
+      <ExperienceSection
+        id="ervaring"
+        title="Werkervaring"
+        tagline="Meer dan 3 jaar aan het werk"
+        items={workExperience}
+      />
+
+      <Line />
+      {/* Opleiding */}
+      <ExperienceSection
+        id="opleiding"
+        title="Opleiding"
+        tagline="Doe kennis op"
+        items={educationExperience}
+      />
     </main>
   </>
 );
