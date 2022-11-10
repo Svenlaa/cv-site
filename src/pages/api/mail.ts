@@ -1,23 +1,31 @@
 import { type NextApiRequest, type NextApiResponse } from "next";
-import z from "zod";
-
 import nodemailer from "nodemailer";
+import z from "zod";
+import { env } from "../../env/server.mjs";
 
-const apiSchema = z.object({
+const mailSchema = z.object({
   name: z.string().min(1),
   subject: z.string().min(1),
-  text: z.string().min(1),
-  mail: z.string().email(),
+  text: z.string(),
+  mail: z.string().email().or(z.literal("")),
 });
 
+export type MailSchema = z.infer<typeof mailSchema>;
+
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  if (req.headers.origin !== env.PROD_URL)
+    return res.status(401).send("Incorrect Origin, use the website");
+
   if (req.method !== "POST")
-    return res.status(405).send("Try with a POST mehthod");
+    return res.status(405).send("Only POST reqs are accepted");
 
-  const validation = apiSchema.safeParse(req.body);
-  if (!validation.success) return res.status(400).send("Invalid schema");
+  console.log(typeof req.body === "object" ? req.body : JSON.parse(req.body));
 
-  const data = apiSchema.parse(req.body);
+  const validation = mailSchema.safeParse(
+    typeof req.body === "object" ? req.body : JSON.parse(req.body)
+  );
+  if (!validation.success) return res.status(400).send(validation.error);
+  const data = validation.data;
 
   const transporter = nodemailer.createTransport({
     service: "hotmail",
@@ -30,8 +38,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const info = await transporter.sendMail({
     from: `"${data.name}" <${process.env.MAIL_ADDR}>`,
     to: process.env.MAIL_ADDR,
-    subject: `Nodemailer: ${data.subject} - ${data.mail}`,
-    text: `name: ${data.name}\nmail: ${data.mail}\nsubject: ${data.subject}\n\n${data.text}`,
+    subject: `Nodemailer: ${data.subject} - ${data.mail || "unknown"}`,
+    text: `name: ${data.name}\nsubject: ${data.subject}\n\n${data.text}`,
   });
 
   return res.status(200).send(`Mail sent with id ${info.messageId}`);

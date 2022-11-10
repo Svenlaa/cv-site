@@ -9,6 +9,7 @@ import ExperienceCard, {
 } from "../components/ExerienceCard";
 import Line from "../components/UI/Line";
 import Section from "../components/Section";
+import Form from "../components/Form/Form";
 
 const entries = [
   {
@@ -154,7 +155,9 @@ const Home: NextPage = () => (
       <Line />
       {/* Contact */}
       <Section id="contact" title="Contact" tagline="Heb je een vraag?">
-        Pizza
+        <div className="flex flex-col flex-wrap">
+          <Form />
+        </div>
       </Section>
     </main>
   </>
