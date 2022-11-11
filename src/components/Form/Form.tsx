@@ -40,7 +40,7 @@ const FormComponent = () => {
         mailMutation.mutate(values, { onSettled: () => setSubmitting(false) });
       }}
     >
-      <Form className="flex flex-col gap-[20px] bg-gradient-to-br from-white0 to-white p-[20px] shadow-white3">
+      <Form className="flex w-full flex-col gap-[20px] rounded-[10px] bg-gradient-to-br from-white0 to-white p-[20px] shadow-white3">
         <Input label="email" name="mail" />
         <Input label="Jouw naam" required={true} name="name" />
         <Input label="onderwerp" required={true} name="subject" />

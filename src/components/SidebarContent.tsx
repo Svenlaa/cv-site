@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FiGithub, FiLinkedin, FiTwitter, FiX } from "react-icons/fi";
+import { FiX } from "react-icons/fi";
+import Socials from "./Socials";
 import CircleButton from "./UI/CircleButton";
-import HoverButton from "./UI/HoverButton";
 
 export const links = [
   {
@@ -28,24 +28,6 @@ export const links = [
   {
     label: "contact",
     href: "#contact",
-  },
-] as const;
-
-const SocialLinks = [
-  {
-    label: <FiGithub />,
-    href: "https://github.com/Svenlaa",
-    title: "Github",
-  },
-  {
-    label: <FiTwitter />,
-    href: "https://twitter.com/Svenlaa",
-    title: "Twitter",
-  },
-  {
-    label: <FiLinkedin />,
-    href: "https://linkedin.com/in/Svenlaa",
-    title: "Linkedin",
   },
 ] as const;
 
@@ -81,21 +63,7 @@ const SidebarContent = ({ onClick }: Props) => {
           ))}
         </ul>
       </nav>
-      <div className="mt-5 mb-5 pt-5 text-[14px] font-medium uppercase">
-        <span className="tracking-[2px]">Elders op het internet</span>
-      </div>
-      <ul className="ml-[15px] flex flex-row gap-[15px]">
-        {SocialLinks.map((link, i) => (
-          <li key={i} className="my-[15px]">
-            <HoverButton
-              className="h-[53px] w-[53px]"
-              title={link.title}
-              href={link.href}
-              label={link.label}
-            />
-          </li>
-        ))}
-      </ul>
+      <Socials />
     </>
   );
 };
