@@ -3,7 +3,7 @@ import Link from "next/link";
 import Socials from "./Socials";
 
 const Contact = () => (
-  <div className="flex w-full flex-col gap-[28px] rounded-[10px] bg-gradient-to-br from-white0 to-white py-[50px] px-[20px] shadow-white3 md:w-3/6">
+  <div className="flex w-full flex-col gap-[28px] rounded-[10px] bg-gradient-to-br from-white0 to-white py-[50px] px-[20px] shadow-white3 md:w-4/6">
     <div className="relative aspect-[1.6] w-full overflow-hidden rounded-md ">
       <Image
         fill
