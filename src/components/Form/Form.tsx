@@ -45,7 +45,7 @@ const FormComponent = () => {
       }}
     >
       {({ isSubmitting }) => (
-        <Form className="flex w-full flex-col gap-[20px] rounded-[10px] bg-gradient-to-br from-white0 to-white p-[20px] shadow-white3">
+        <Form className="shadow-white-3 flex w-full flex-col gap-[20px] rounded-[10px] bg-gradient-to-br from-white0 to-white p-[20px] dark:from-dark-bg dark:to-dark-bg dark:shadow-dark1">
           <Input label="email" name="mail" />
           <Input label="Jouw naam" required={true} name="name" />
           <Input label="onderwerp" required={true} name="subject" />
@@ -58,10 +58,10 @@ const FormComponent = () => {
           >
             <span
               className={clsx(
-                "flex  h-[55px] flex-row items-center justify-center rounded-md bg-gradient-to-br from-white0 to-white px-[15px] font-nav text-[14px] font-medium uppercase leading-[1.7em] tracking-[1px] text-text shadow-white3 transition-all duration-400 ease-in-out group-hover:translate-y-[-5px]",
+                "dark:text-dtext  shadow-white-3 flex h-[55px] flex-row items-center justify-center rounded-md bg-gradient-to-br from-white0 to-white px-[15px] font-nav text-[14px] font-medium uppercase leading-[1.7em] tracking-[1px] text-text transition-all duration-400 ease-in-out group-hover:translate-y-[-5px] dark:from-dark-bg dark:to-dark-bg dark:shadow-dark1",
                 isSubmitting
                   ? ""
-                  : "group-hover:from-purple group-hover:to-red group-hover:text-white"
+                  : "dark:group-hover:from-dark dark:group-hover:to-dark group-hover:from-purple group-hover:to-red group-hover:text-white dark:text-text-dark"
               )}
             >
               Bericht verzenden

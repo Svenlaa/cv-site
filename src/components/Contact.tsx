@@ -3,7 +3,7 @@ import Link from "next/link";
 import Socials from "./Socials";
 
 const Contact = () => (
-  <div className="flex w-full flex-col gap-[28px] rounded-[10px] bg-gradient-to-br from-white0 to-white py-[50px] px-[20px] shadow-white3 md:w-4/6">
+  <div className="shadow-white-3 flex w-full flex-col gap-[28px] rounded-[10px] bg-gradient-to-br from-white0 to-white py-[50px] px-[20px] dark:from-dark-bg dark:to-dark-bg dark:shadow-dark1 md:w-4/6">
     <div className="relative aspect-[1.6] w-full overflow-hidden rounded-md ">
       <Image
         fill
@@ -24,7 +24,7 @@ const Contact = () => (
           Email:{" "}
           <Link
             href="mailto:sven.lammertink@hotmail.com"
-            className="relative transition-all duration-400 before:absolute before:bottom-0 before:w-0 before:border-b before:border-b-prime before:duration-400 hover:text-prime hover:before:w-full"
+            className="relative transition-all duration-400 before:absolute before:bottom-0 before:w-0 before:border-b before:border-b-prime before:duration-400 hover:text-prime hover:before:w-full dark:text-white"
           >
             sven.lammertink@hotmail.com
           </Link>

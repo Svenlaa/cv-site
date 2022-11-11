@@ -13,7 +13,7 @@ export type ExperienceProps = {
 };
 
 const ExperienceCard = ({ item }: ExperienceProps) => (
-  <div className="mx-[10px] mt-[40px] flex flex-col gap-[25px] rounded-[10px] bg-gradient-to-br from-white0 to-white p-[20px] shadow-white3 md:flex-row">
+  <div className="shadow-white-3 mx-[10px] mt-[40px] flex flex-col gap-[25px] rounded-[10px] bg-gradient-to-br from-white0 to-white p-[20px] dark:from-dark-bg dark:to-dark-bg dark:shadow-dark1 md:flex-row">
     <div className="relative aspect-[1.5] w-full overflow-hidden rounded-md md:aspect-[1.9] md:h-[170px] md:w-auto">
       <Image
         src={item.image}

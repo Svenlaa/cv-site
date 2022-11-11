@@ -80,12 +80,12 @@ const Home: NextPage = () => (
         id="home"
       >
         <div className="group h-full" id="home">
-          <section className="w-full rounded-[10px] bg-gradient-to-br from-white0 to-white p-[25px] pt-[41px] shadow-white3 duration-400 group-hover:translate-y-[-5px]">
+          <section className="shadow-white-3 w-full rounded-[10px] bg-gradient-to-br from-white0 to-white p-[25px] pt-[41px] duration-400 group-hover:translate-y-[-5px] dark:from-dark-bg dark:to-dark-bg dark:shadow-dark1">
             <div className="mb-[30px]">
               <div className="relative mb-[20px] flex h-[40px] w-[40px] flex-row items-center justify-center rounded-full bg-prime/70 after:absolute after:h-[60px] after:w-[60px] after:rounded-full after:bg-prime/20 ">
                 <FiUser className="trans top-0 left-0 z-10 aspect-square items-center text-[22px] text-white" />
               </div>
-              <h2 className="mb-[11px] font-nav text-[32px] font-bold leading-[40px] lg:text-[52px] lg:leading-[62px]">
+              <h2 className="mb-[11px] font-nav text-[32px] font-bold leading-[40px] dark:text-white lg:text-[52px] lg:leading-[62px]">
                 Ik ben <span className="text-prime">Sven</span>
               </h2>
               <p className="text-[16px] leading-6">
@@ -103,7 +103,7 @@ const Home: NextPage = () => (
             </div>
           </section>
         </div>
-        <section className="my-[10px] h-min rounded-[10px] bg-gradient-to-br from-white0 to-white px-[20px] py-[15px] shadow-white3">
+        <section className="shadow-white-3 my-[10px] h-min rounded-[10px] bg-gradient-to-br from-white0 to-white px-[20px] py-[15px] dark:from-dark-bg dark:to-dark-bg dark:shadow-dark1">
           <div className="p-[10px]">
             <span className="mb-[20px]">Download mijn CV</span>
             <div className="flex flex-row flex-wrap">
@@ -120,7 +120,7 @@ const Home: NextPage = () => (
             </div>
           </div>
         </section>
-        <section className="col-start-2 row-span-2 h-min rounded-[10px] bg-gradient-to-br from-white0 to-white p-[15px] shadow-white3 md:p-[30px]">
+        <section className="shadow-white-3 col-start-2 row-span-2 h-min rounded-[10px] bg-gradient-to-br from-white0 to-white p-[15px] dark:from-dark-bg dark:to-dark-bg dark:shadow-dark1 md:p-[30px]">
           <div className="relative z-10 aspect-[1.333] w-full overflow-hidden rounded-md">
             <Image
               src="/NewPic.jpg"

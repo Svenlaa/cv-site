@@ -22,7 +22,7 @@ const NavBar = () => {
         <div
           className={clsx(
             navIsOpen ? "" : "-translate-x-full",
-            "h-full w-[310px]  bg-white p-5 transition-all duration-500"
+            "h-full w-[310px] bg-white  p-5 transition-all duration-500 dark:bg-dark-600 dark:text-text-dark"
           )}
         >
           <SidebarContent onClick={toggle} />

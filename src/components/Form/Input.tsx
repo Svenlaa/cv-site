@@ -16,7 +16,7 @@ const Input = ({ name, label, required = false }: Props) => (
     </label>
     <Field
       name={name}
-      className="h-[55px] rounded-[6px] border-2 border-[#dce1e4] px-[15px] text-[14px] leading-[2em] tracking-[1px] text-text"
+      className="h-[55px] rounded-[6px] border-2 border-[#dce1e4] px-[15px] text-[14px] leading-[2em] tracking-[1px] text-text outline-none transition-colors duration-400 focus:border-prime dark:border-dark-700 dark:bg-dark-500 dark:text-text-dark dark:shadow-indark"
     />
     <ErrorMessage
       name={name}
@@ -39,7 +39,7 @@ export const AreaInput = ({ name, label, required = false }: Props) => (
       name={name}
       as="textarea"
       rows={7}
-      className="resize-none rounded-[6px] border-2 border-[#dce1e4] px-[15px] py-[10px] text-[14px] leading-[18px] tracking-[1px] text-text"
+      className="resize-none rounded-[6px] border-2 border-[#dce1e4] px-[15px] py-[10px] text-[14px] leading-[18px] tracking-[1px] text-text outline-none transition-colors duration-400 focus:border-prime dark:border-dark-700 dark:bg-dark-500 dark:text-text-dark dark:shadow-indark"
     />
     <ErrorMessage
       name={name}
