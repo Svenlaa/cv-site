@@ -59,7 +59,7 @@ const educationExperience: ExperienceProps["item"][] = [
     startDate: "2015",
     endDate: "2020",
     title: "Havo NG, NT",
-    details: "Profielen 3 & 4, niet afgerond",
+    details: "Profielen 3 & 4",
     image: "/companies/Reggesteyn.jpg",
   },
 ];
