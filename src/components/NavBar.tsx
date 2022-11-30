@@ -31,11 +31,15 @@ const NavBar = () => {
       </div>
       <div className="flex flex-row justify-between border-b-[1px] border-b-[#dce1e4] px-[15px] py-[14px] lg:px-[45px] lg:py-[14px]">
         {/* Left Part */}
-        <div className="flex flex-row items-center">
-          <Link href="/" className="relative aspect-[3/1] h-[45px] lg:h-[70px]">
-            <Image alt="Svenlaa" src="/Brand.png" fill />
-          </Link>
-        </div>
+        <Link
+          href="/"
+          className="flex flex-row items-center text-lg lg:text-2xl"
+        >
+          <div className="relative mr-2 aspect-square h-[45px] w-[45px] overflow-hidden rounded-full border-4 border-gray-300 bg-clip-border dark:border-gray-700 lg:mr-2 lg:h-[70px] lg:w-[70px]">
+            <Image alt="Svenlaa" src="/ProfilePic.jpg" fill />
+          </div>
+          Svenlaa
+        </Link>
         {/* Right Part */}
         <div className="flex flex-row items-center justify-end md:hidden">
           <CircleButton onClick={toggle} icon={<FiMenu />} />

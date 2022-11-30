@@ -67,7 +67,7 @@ const educationExperience: ExperienceProps["item"][] = [
 const Home: NextPage = () => (
   <>
     <Head>
-      <title>v2.Svenlaa.com</title>
+      <title>Svenlaa CV</title>
       <meta name="description" content="De tweede generatie van Svenlaa.com" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
@@ -105,12 +105,12 @@ const Home: NextPage = () => (
         </div>
         <section className="shadow-white-3 my-[10px] h-min rounded-[10px] bg-gradient-to-br from-white0 to-white px-[20px] py-[15px] dark:from-dark-bg dark:to-dark-bg dark:shadow-dark1">
           <div className="p-[10px]">
-            <span className="mb-[20px]">Download mijn CV</span>
+            <span className="mb-[20px]">Meer info</span>
             <div className="flex flex-row flex-wrap">
               <HoverButton
                 className="m-[7px] w-fit whitespace-nowrap py-[15px] px-[35px] font-nav !text-[14px] font-medium uppercase !text-prime group-hover:!text-white"
-                label="Download CV"
-                href="./CV_button"
+                label="Homepage"
+                href="https://svenlaa.com"
               />
               <HoverButton
                 className="m-[7px] w-fit whitespace-nowrap py-[15px] px-[35px] font-nav !text-[14px] font-medium uppercase !text-prime group-hover:!text-white"

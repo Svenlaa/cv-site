@@ -18,14 +18,6 @@ export const links = [
     href: "#opleiding",
   },
   {
-    label: "cv",
-    href: "#cv",
-  },
-  {
-    label: "projecten",
-    href: "#projecten",
-  },
-  {
     label: "contact",
     href: "#contact",
   },
