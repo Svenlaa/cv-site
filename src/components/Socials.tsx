@@ -1,4 +1,4 @@
-import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
+import { FiGithub, FiGitlab, FiLinkedin } from "react-icons/fi";
 import HoverButton from "./UI/HoverButton";
 
 const SocialLinks = [
@@ -8,9 +8,9 @@ const SocialLinks = [
     title: "Github",
   },
   {
-    label: <FiTwitter />,
-    href: "https://twitter.com/Svenlaa",
-    title: "Twitter",
+    label: <FiGitlab />,
+    href: "https://gitlab.com/Svenlaa",
+    title: "Gitlab",
   },
   {
     label: <FiLinkedin />,
@@ -22,7 +22,7 @@ const SocialLinks = [
 const Socials = () => {
   return (
     <>
-      <div className="mt-5 mb-5 pt-5 text-[14px] font-medium uppercase">
+      <div className="mb-5 mt-5 pt-5 text-[14px] font-medium uppercase">
         <span className="tracking-[2px]">Elders op het internet</span>
       </div>
       <ul className="ml-[15px] flex flex-row gap-[15px]">
