@@ -1,4 +1,4 @@
-# v2.Svenlaa.com
+# cv.Svenlaa.com
 
 - **Framework**: [Next.js](https://nextjs.org)
 - **Styling**: [Tailwind](https://tailwindcss.org)
