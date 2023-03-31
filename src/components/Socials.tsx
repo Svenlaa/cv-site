@@ -32,6 +32,7 @@ const Socials = () => {
               className="h-[53px] w-[53px]"
               title={link.title}
               href={link.href}
+              target="_blank"
               label={link.label}
             />
           </li>
