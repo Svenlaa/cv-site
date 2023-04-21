@@ -33,11 +33,18 @@ const handler: NextApiHandler = async (req, res) => {
     },
   });
 
+  const mailContent = [
+    `name: ${data.name}`,
+    `email: ${data.mail || "unknown"}`,
+    `subject: ${data.subject}`,
+    `\n${data.text}`,
+  ];
+
   const info = await transporter.sendMail({
     from: `"${data.name}" <${process.env.MAIL_ADDR}>`,
     to: process.env.MAIL_ADDR,
-    subject: `Nodemailer: ${data.subject} - ${data.mail || "unknown"}`,
-    text: `name: ${data.name}\nsubject: ${data.subject}\n\n${data.text}`,
+    subject: `Nodemailer: ${data.subject} - ${data.name}`,
+    text: mailContent.join("\n"),
   });
 
   return res.status(200).send(`Mail sent with id ${info.messageId}`);
