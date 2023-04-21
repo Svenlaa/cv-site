@@ -8,9 +8,9 @@ import Input, { AreaInput } from "./Input";
 import clsx from "clsx";
 
 const mailSchema = z.object({
-  name: z.string().min(1),
-  subject: z.string().min(1),
-  text: z.string().min(1),
+  name: z.string({ required_error: "Verplicht" }).min(1),
+  subject: z.string({ required_error: "Verplicht" }).min(1),
+  text: z.string({ required_error: "Verplicht" }).min(1),
   mail: z.string().email().optional(),
 });
 
@@ -36,7 +36,6 @@ const FormComponent = () => {
       initialValues={initialValues}
       validationSchema={toFormikValidationSchema(mailSchema)}
       onSubmit={(values, { setSubmitting, resetForm }) => {
-        console.log(values.text);
         setSubmitting(true);
         mailMutation.mutate(values, {
           onSettled: () => setSubmitting(false),
