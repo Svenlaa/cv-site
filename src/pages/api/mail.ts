@@ -1,4 +1,4 @@
-import { type NextApiRequest, type NextApiResponse } from "next";
+import type { NextApiHandler } from "next";
 import nodemailer from "nodemailer";
 import z from "zod";
 import { env } from "../../env/server.mjs";
@@ -12,14 +12,12 @@ const mailSchema = z.object({
 
 export type MailSchema = z.infer<typeof mailSchema>;
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.headers.origin !== env.PROD_URL)
+const handler: NextApiHandler = async (req, res) => {
+  if (req.headers.origin !== env.NEXT_PUBLIC_URL)
     return res.status(401).send("Incorrect Origin, use the website");
 
   if (req.method !== "POST")
     return res.status(405).send("Only POST reqs are accepted");
-
-  console.log(typeof req.body === "object" ? req.body : JSON.parse(req.body));
 
   const validation = mailSchema.safeParse(
     typeof req.body === "object" ? req.body : JSON.parse(req.body)

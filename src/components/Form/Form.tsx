@@ -17,7 +17,7 @@ const mailSchema = z.object({
 const FormComponent = () => {
   const mailMutation = useMutation({
     mutationFn: (reqBody: MailSchema) => {
-      return fetch(`${env.NEXT_PUBLIC_API_URL}/mail`, {
+      return fetch(`${env.NEXT_PUBLIC_URL}/api/mail`, {
         method: "POST",
         body: JSON.stringify(reqBody),
       });
