@@ -10,8 +10,6 @@
 This application requires Node.js and pnpm
 
 ```bash
-git clone https://github.com/svenlaa/home.git
-cd home
 pnpm i
 pnpm dev
 ```
